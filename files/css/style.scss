@@ -1,3 +1,28 @@
+// Font :
+@font-face {
+    font-family: "Harry P";
+    src: url("/files/font/HarryP/HarryP.woff2") format("woff2"), url("/files/font/HarryP/HarryP.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+// Variables :
+$main-color: #161616;
+$secondary-color: #f8a81b;
+$tertiary-color: #feb741;
+
+$main-font-color: #f2f2f2;
+$secondary-font-color: #feedd3;
+$tertiary-font-color: #776e67;
+
+$griffondor: #ef4634;
+$serpentard: #378b6e;
+$serdaigle: #242586;
+$poufsouffle: #ffc703;
+
 // Setup :
 
 * {
@@ -7,9 +32,21 @@
     outline: none;
 }
 
+body {
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+}
+
 // Reset :
 a {
     text-decoration: none;
 }
 
+.letter {
+    display: inline-block;
+}
+
 // Import :
+@import "scss/_mixin.scss";
+
+@import "scss/_header.scss";

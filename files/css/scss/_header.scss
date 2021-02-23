@@ -1,0 +1,86 @@
+header {
+    @include flexMidColumn;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // background: $main-color;
+    background: linear-gradient(0deg, $main-color, rgba(255, 255, 255, 0) 50%), url("../img/Hogwart_Darker.jpg") no-repeat center center;
+    background-size: 100%;
+    background-attachment: fixed;
+
+    h1 {
+        font-size: 12.5em;
+        font-family: "Harry P";
+        font-weight: 400;
+        color: $secondary-color;
+        text-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.4);
+        margin-bottom: 40px;
+    }
+    p.desc {
+        text-align: center;
+        max-width: 50%;
+        color: $main-font-color;
+        font-size: 1.2em;
+        margin-bottom: 40px;
+    }
+    a {
+        position: relative;
+        border: 1px solid $secondary-color;
+        padding: 15px 30px;
+        transition: 0.3s;
+
+        &:hover::before {
+            transform: scaleY(1);
+            transform-origin: center bottom;
+        }
+        &:hover span {
+            color: $main-color;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: scaleY(0);
+            transform-origin: center top;
+            background: $secondary-color;
+            transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        span {
+            position: relative;
+            z-index: 2;
+            color: $main-font-color;
+            font-size: 1.4em;
+            transition: 0.3s;
+        }
+    }
+    .scroll_visit {
+        @include flexMidColumn;
+
+        position: absolute;
+        bottom: 60px;
+        color: $tertiary-color;
+
+        i {
+            font-size: 1.6em;
+            animation: scroll_arrow 3s infinite;
+        }
+    }
+}
+
+// Keyframes :
+@keyframes scroll_arrow {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}

@@ -1,0 +1,45 @@
+// Mixin :
+// Position Absolute :
+@mixin absoluteCenter() {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// FlexBox :
+@mixin flexMid() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexMidColumn() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin flexAround {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@mixin flexBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flexAround {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+// Shadow box :
+@mixin shadow($x, $y, $z) {
+    box-shadow: $x $y $z rgba(0, 0, 0, 0.4);
+}

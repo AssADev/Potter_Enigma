@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+@font-face {
+  font-family: "Harry P";
+  src: url("/files/font/HarryP/HarryP.woff2") format("woff2"), url("/files/font/HarryP/HarryP.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +15,155 @@
   outline: none;
 }
 
+body {
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
 a {
   text-decoration: none;
+}
+
+.letter {
+  display: inline-block;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#161616), color-stop(50%, rgba(255, 255, 255, 0))), url("../img/Hogwart_Darker.jpg") no-repeat center center;
+  background: linear-gradient(0deg, #161616, rgba(255, 255, 255, 0) 50%), url("../img/Hogwart_Darker.jpg") no-repeat center center;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+header h1 {
+  font-size: 12.5em;
+  font-family: "Harry P";
+  font-weight: 400;
+  color: #f8a81b;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
+}
+
+header p.desc {
+  text-align: center;
+  max-width: 50%;
+  color: #f2f2f2;
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+header a {
+  position: relative;
+  border: 1px solid #f8a81b;
+  padding: 15px 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header a:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+header a:hover span {
+  color: #161616;
+}
+
+header a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  background: #f8a81b;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+header a span {
+  position: relative;
+  z-index: 2;
+  color: #f2f2f2;
+  font-size: 1.4em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header .scroll_visit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  bottom: 60px;
+  color: #feb741;
+}
+
+header .scroll_visit i {
+  font-size: 1.6em;
+  -webkit-animation: scroll_arrow 3s infinite;
+          animation: scroll_arrow 3s infinite;
+}
+
+@-webkit-keyframes scroll_arrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes scroll_arrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
 }
 /*# sourceMappingURL=style.css.map */
