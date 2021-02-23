@@ -33,6 +33,7 @@ $poufsouffle: #ffc703;
 }
 
 body {
+    position: relative;
     height: 100vh;
     font-family: "Montserrat", sans-serif;
 }
@@ -43,10 +44,11 @@ a {
 }
 
 .letter {
-    display: inline-block;
+    display: inline-block !important;
 }
 
 // Import :
 @import "scss/_mixin.scss";
 
 @import "scss/_header.scss";
+@import "scss/_main.scss";
