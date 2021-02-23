@@ -68,7 +68,7 @@ header h1 {
 
 header p.desc {
   text-align: center;
-  max-width: 50%;
+  max-width: 60%;
   color: #f2f2f2;
   font-size: 1.2em;
   margin-bottom: 40px;
@@ -182,6 +182,35 @@ header .scroll_visit i {
     opacity: 0;
     -webkit-transform: translateY(20px);
             transform: translateY(20px);
+  }
+}
+
+@media screen and (max-width: 1015px) {
+  header h1 {
+    font-size: 10.5em;
+    margin-bottom: 30px;
+  }
+  header p.desc {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  header h1 {
+    font-size: 7.5em;
+  }
+  header p.desc {
+    font-size: 1.1em;
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  header h1 {
+    font-size: 5em;
+  }
+  header a span {
+    font-size: 1.2em;
   }
 }
 
