@@ -1,22 +1,19 @@
 // Font :
-@font-face {
-    font-family: "Harry P";
-    src: url("/files/font/HarryP/HarryP.woff2") format("woff2"), url("/files/font/HarryP/HarryP.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Cardo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
 
 // Variables :
-$main-color: #161616;
-$secondary-color: #f8a81b;
-$tertiary-color: #feb741;
+$main-color: #e8e9e3;
+$secondary-color: #b53910;
+$tertiary-color: #d94e39;
+
+$contrast-grey: #6f6d6a;
+$contrast-orange: #992e0a;
+$contrast-black: #161616;
 
 $main-font-color: #f2f2f2;
-$secondary-font-color: #feedd3;
-$tertiary-font-color: #776e67;
+$secondary-font-color: #f3a792;
 
 $griffondor: #ef4634;
 $serpentard: #378b6e;
@@ -24,7 +21,6 @@ $serdaigle: #242586;
 $poufsouffle: #ffc703;
 
 // Setup :
-
 * {
     margin: 0;
     padding: 0;
@@ -35,12 +31,45 @@ $poufsouffle: #ffc703;
 body {
     position: relative;
     height: 100vh;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Cardo";
+    background: $main-color;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    transform: translateY(-10px);
+
+    .line {
+        width: 100%;
+        height: 2px;
+        background: $contrast-grey;
+
+        &:first-child {
+            transform-origin: center right;
+        }
+        &:last-child {
+            transform-origin: center left;
+        }
+    }
+    .paragraphe_symbol {
+        margin: 0 20px;
+        transform: rotate(90deg);
+        font-size: 20px;
+    }
 }
 
 // Reset :
 a {
     text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: "Montserrat";
 }
 
 .letter {
@@ -51,4 +80,4 @@ a {
 @import "scss/_mixin.scss";
 
 @import "scss/_header.scss";
-@import "scss/_main.scss";
+@import "scss/_quizz.scss";

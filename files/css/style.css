@@ -1,12 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
-@font-face {
-  font-family: "Harry P";
-  src: url("/files/font/HarryP/HarryP.woff2") format("woff2"), url("/files/font/HarryP/HarryP.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -18,11 +12,56 @@
 body {
   position: relative;
   height: 100vh;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cardo";
+  background: #e8e9e3;
+}
+
+.separator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.separator .line {
+  width: 100%;
+  height: 2px;
+  background: #6f6d6a;
+}
+
+.separator .line:first-child {
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.separator .line:last-child {
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.separator .paragraphe_symbol {
+  margin: 0 20px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  font-size: 20px;
 }
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Montserrat";
 }
 
 .letter {
@@ -30,70 +69,27 @@ a {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   position: relative;
   width: 100%;
   height: 100%;
-  background: url("../img/Hogwart_Darker.jpg") no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
-header h1 {
-  position: relative;
-  z-index: 10;
-  font-size: 12.5em;
-  font-family: "Harry P";
-  font-weight: 400;
-  color: #f8a81b;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  margin-bottom: 40px;
+header a.aside_link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #992e0a;
+  padding: 20px 30px;
 }
 
-header p.desc {
-  text-align: center;
-  max-width: 60%;
-  color: #f2f2f2;
-  font-size: 1.2em;
-  margin-bottom: 40px;
-}
-
-header a {
-  position: relative;
-  border: 1px solid #f8a81b;
-  padding: 15px 30px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-header a:hover::before {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+header a.aside_link:hover::before {
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 
-header a:hover span {
-  color: #161616;
-}
-
-header a::before {
+header a.aside_link::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -104,23 +100,22 @@ header a::before {
           transform: scaleY(0);
   -webkit-transform-origin: center top;
           transform-origin: center top;
-  background: #f8a81b;
+  background: #d94e39;
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-header a span {
+header a.aside_link span {
   position: relative;
   z-index: 2;
-  color: #f2f2f2;
-  font-size: 1.4em;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  color: #e8e9e3;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
 }
 
-header .scroll_visit {
+header .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,89 +129,124 @@ header .scroll_visit {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  bottom: 60px;
-  color: #feb741;
+  background: #b53910;
+  width: 100%;
+  height: 40%;
+  color: #e8e9e3;
+  padding-bottom: 60px;
 }
 
-header .scroll_visit i {
-  font-size: 1.6em;
-  -webkit-animation: scroll_arrow 3s infinite;
-          animation: scroll_arrow 3s infinite;
+header .title h1 {
+  font-family: "Cardo";
+  font-weight: 400;
+  font-size: 58px;
+  margin-bottom: 5px;
 }
 
-.apparition {
+header .title p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #f3a792;
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+  height: 450px;
+  overflow: hidden;
+}
+
+header .container .left_side, header .container .right_side {
+  overflow: hidden;
+}
+
+header .container .left_side .left_side_inner, header .container .right_side .left_side_inner {
+  width: 100%;
+  height: 100%;
+  background: url("../img/Illustration_Home_HP.jpg") no-repeat center 35%;
+  background-size: cover;
+}
+
+header .container .right_side .right_side_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  background: #d94e39;
+  color: #e8e9e3;
+  font-size: 20px;
+  text-align: center;
+}
+
+header .container .right_side .right_side_inner p:first-child {
+  margin-bottom: 20px;
+}
+
+header .container .right_side .right_side_inner button {
   position: absolute;
-  z-index: 5;
-  top: 0;
+  bottom: 0;
+  width: 100%;
+  border: none;
+  background: #b53910;
+  padding: 20px;
+}
+
+header .container .right_side .right_side_inner button:hover::before {
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+header .container .right_side .right_side_inner button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #161616;
-  -webkit-transform-origin: center bottom;
-          transform-origin: center bottom;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  background: #992e0a;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-@-webkit-keyframes scroll_arrow {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
-  }
+header .container .right_side .right_side_inner button span {
+  position: relative;
+  z-index: 2;
+  color: #e8e9e3;
+  font-size: 20px;
 }
 
-@keyframes scroll_arrow {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
-  }
-}
-
-@media screen and (max-width: 1015px) {
-  header h1 {
-    font-size: 10.5em;
-    margin-bottom: 30px;
-  }
-  header p.desc {
-    max-width: 70%;
-  }
-}
-
-@media screen and (max-width: 745px) {
-  header h1 {
-    font-size: 7.5em;
-  }
-  header p.desc {
-    font-size: 1.1em;
-    max-width: 80%;
-  }
-}
-
-@media screen and (max-width: 510px) {
-  header h1 {
-    font-size: 5em;
-  }
-  header a span {
-    font-size: 1.2em;
-  }
-}
-
-main {
+.quizz {
   width: 100%;
   height: 100%;
-  background: #161616;
+  background: #e8e9e3;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,44 +1,18 @@
 header {
-    @include flexMidColumn;
-
     position: relative;
     width: 100%;
     height: 100%;
-    // background: $main-color;
-    background: url("../img/Hogwart_Darker.jpg") no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-    user-select: none;
 
-    h1 {
-        position: relative;
-        z-index: 10;
-        font-size: 12.5em;
-        font-family: "Harry P";
-        font-weight: 400;
-        color: $secondary-color;
-        text-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.4);
-        margin-bottom: 40px;
-    }
-    p.desc {
-        text-align: center;
-        max-width: 60%;
-        color: $main-font-color;
-        font-size: 1.2em;
-        margin-bottom: 40px;
-    }
-    a {
-        position: relative;
-        border: 1px solid $secondary-color;
-        padding: 15px 30px;
-        transition: 0.3s;
+    a.aside_link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $contrast-orange;
+        padding: 20px 30px;
 
         &:hover::before {
-            transform: scaleY(1);
             transform-origin: center bottom;
-        }
-        &:hover span {
-            color: $main-color;
+            transform: scaleY(1);
         }
         &::before {
             content: "";
@@ -49,82 +23,110 @@ header {
             height: 100%;
             transform: scaleY(0);
             transform-origin: center top;
-            background: $secondary-color;
+            background: $tertiary-color;
             transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
         span {
             position: relative;
             z-index: 2;
-            color: $main-font-color;
-            font-size: 1.4em;
-            transition: 0.3s;
+            color: $main-color;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
         }
     }
-    .scroll_visit {
+    .title {
         @include flexMidColumn;
 
-        position: absolute;
-        bottom: 60px;
-        color: $tertiary-color;
+        background: $secondary-color;
+        width: 100%;
+        height: 40%;
+        color: $main-color;
+        padding-bottom: 60px;
 
-        i {
-            font-size: 1.6em;
-            animation: scroll_arrow 3s infinite;
+        h1 {
+            font-family: "Cardo";
+            font-weight: 400;
+            font-size: 58px;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 20px;
+            font-weight: 400;
+            color: $secondary-font-color;
         }
     }
-}
+    .container {
+        position: relative;
+        z-index: 2;
+        margin: 0 auto;
+        transform: translateY(-60px);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        height: 450px;
+        overflow: hidden;
 
-.apparition {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $main-color;
-    transform-origin: center bottom;
-}
+        .left_side {
+            overflow: hidden;
 
-// Keyframes :
-@keyframes scroll_arrow {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
+            .left_side_inner {
+                width: 100%;
+                height: 100%;
+                background: url("../img/Illustration_Home_HP.jpg") no-repeat center 35%;
+                background-size: cover;
+            }
+        }
+        .right_side {
+            @extend .left_side;
 
-// Media Queries :
-@media screen and (max-width: 1015px) {
-    header h1 {
-        font-size: 10.5em;
-        margin-bottom: 30px;
-    }
-    header p.desc {
-        max-width: 70%;
-    }
-}
+            .right_side_inner {
+                @include flexMidColumn;
 
-@media screen and (max-width: 745px) {
-    header h1 {
-        font-size: 7.5em;
-    }
-    header p.desc {
-        font-size: 1.1em;
-        max-width: 80%;
-    }
-}
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 50px;
+                background: $tertiary-color;
+                color: $main-color;
+                font-size: 20px;
+                text-align: center;
 
-@media screen and (max-width: 510px) {
-    header h1 {
-        font-size: 5em;
-    }
-    header a span {
-        font-size: 1.2em;
+                p:first-child {
+                    margin-bottom: 20px;
+                }
+                button {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    border: none;
+                    background: $secondary-color;
+                    padding: 20px;
+
+                    &:hover::before {
+                        transform-origin: center bottom;
+                        transform: scaleY(1);
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        transform: scaleY(0);
+                        transform-origin: center top;
+                        background: $contrast-orange;
+                        transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+                    }
+
+                    span {
+                        position: relative;
+                        z-index: 2;
+                        color: $main-color;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
     }
 }
