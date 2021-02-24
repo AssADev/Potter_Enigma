@@ -18,12 +18,12 @@ body {
 
 ::-moz-selection {
   color: #e8e9e3;
-  background: #f3a792;
+  background: #e0a696;
 }
 
 ::selection {
   color: #e8e9e3;
-  background: #f3a792;
+  background: #e0a696;
 }
 
 .separator {
@@ -154,7 +154,7 @@ header .title h1 {
 header .title p {
   font-size: 20px;
   font-weight: 400;
-  color: #f3a792;
+  color: #e0a696;
 }
 
 header .container {
@@ -401,7 +401,7 @@ header .container .right_side .right_side_inner button span {
   height: 100%;
   text-align: center;
   padding: 50px;
-  font-size: 20px;
+  font-size: 22px;
   color: #e8e9e3;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -426,7 +426,7 @@ header .container .right_side .right_side_inner button span {
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.home_grid .card_grid .card_grid_inner.name_hover #name_hover_anim {
+.home_grid .card_grid .card_grid_inner.name_hover span.letter {
   position: relative;
   z-index: 2;
   font-size: 24px;

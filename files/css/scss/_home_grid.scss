@@ -83,7 +83,7 @@
             height: 100%;
             text-align: center;
             padding: 50px;
-            font-size: 20px;
+            font-size: 22px;
             color: $main-color;
             transition: 0.3s;
 
@@ -102,7 +102,7 @@
                     transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
                 }
 
-                #name_hover_anim {
+                span.letter {
                     position: relative;
                     z-index: 2;
                     font-size: 24px;

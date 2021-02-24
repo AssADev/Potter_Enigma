@@ -10,6 +10,12 @@ potterEnigmaTitle.innerHTML = letterizeSpan(potterEnigmaTitle);
 const potterEnigmaDesc = document.querySelector("header .title p");
 potterEnigmaDesc.innerHTML = letterizeSpan(potterEnigmaDesc);
 
+const gridNamesHover = document.querySelectorAll(".name_hover");
+gridNamesHover.forEach((gridNameHover) => (gridNameHover.innerHTML = letterizeSpan(gridNameHover)));
+
+const gridSentences = document.querySelectorAll(".card_grid_inner p");
+gridSentences.forEach((gridSentence) => (gridSentence.innerHTML = letterizeSpan(gridSentence)));
+
 // Introduction :
 // introductionAnim();
 
