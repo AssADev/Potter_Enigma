@@ -1,0 +1,114 @@
+.home_grid {
+    width: 100%;
+    height: 800px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    .card_grid {
+        overflow: hidden;
+
+        &:nth-child(1) .card_grid_inner {
+            background: url("../img/Grid_Ginny.jpg") no-repeat center center;
+            background-size: cover;
+
+            &.name_hover {
+                &:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: center left;
+                }
+                &::before {
+                    transform: scaleX(0);
+                    transform-origin: center right;
+                }
+            }
+        }
+        &:nth-child(2) .card_grid_inner {
+            background: $contrast-orange;
+        }
+        &:nth-child(3) .card_grid_inner {
+            background: url("../img/Grid_Luna.jpg") no-repeat center center;
+            background-size: cover;
+
+            &.name_hover {
+                &:hover::before {
+                    transform: scaleY(1);
+                    transform-origin: center top;
+                }
+                &::before {
+                    transform: scaleY(0);
+                    transform-origin: center bottom;
+                }
+            }
+        }
+        &:nth-child(4) .card_grid_inner {
+            background: $tertiary-color;
+        }
+        &:nth-child(5) .card_grid_inner {
+            background: url("../img/Grid_Harry.jpg") no-repeat center center;
+            background-size: cover;
+
+            &.name_hover {
+                &:hover::before {
+                    transform: scaleY(1);
+                    transform-origin: center bottom;
+                }
+                &::before {
+                    transform: scaleY(0);
+                    transform-origin: center top;
+                }
+            }
+        }
+        &:nth-child(6) .card_grid_inner {
+            background: url("../img/Grid_Hagrid.jpg") no-repeat center center;
+            background-size: cover;
+
+            &.name_hover {
+                &:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: center right;
+                }
+                &::before {
+                    transform: scaleX(0);
+                    transform-origin: center left;
+                }
+            }
+        }
+
+        .card_grid_inner {
+            @include flexMid;
+
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 50px;
+            font-size: 20px;
+            color: $main-color;
+            transition: 0.3s;
+
+            &.name_hover {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: $contrast-black;
+                    opacity: 0.5;
+                    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+                }
+
+                #name_hover_anim {
+                    position: relative;
+                    z-index: 2;
+                    font-size: 24px;
+                    font-family: "Montserrat", sans-serif;
+                }
+            }
+        }
+    }
+}

@@ -80,7 +80,6 @@ header {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 header .aside_link {
@@ -289,9 +288,148 @@ header .container .right_side .right_side_inner button span {
   }
 }
 
-.quizz {
+.home_grid {
+  width: 100%;
+  height: 800px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+.home_grid .card_grid {
+  overflow: hidden;
+}
+
+.home_grid .card_grid:nth-child(1) .card_grid_inner {
+  background: url("../img/Grid_Ginny.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.home_grid .card_grid:nth-child(1) .card_grid_inner.name_hover:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.home_grid .card_grid:nth-child(1) .card_grid_inner.name_hover::before {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.home_grid .card_grid:nth-child(2) .card_grid_inner {
+  background: #992e0a;
+}
+
+.home_grid .card_grid:nth-child(3) .card_grid_inner {
+  background: url("../img/Grid_Luna.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.home_grid .card_grid:nth-child(3) .card_grid_inner.name_hover:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+}
+
+.home_grid .card_grid:nth-child(3) .card_grid_inner.name_hover::before {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+.home_grid .card_grid:nth-child(4) .card_grid_inner {
+  background: #e34a32;
+}
+
+.home_grid .card_grid:nth-child(5) .card_grid_inner {
+  background: url("../img/Grid_Harry.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.home_grid .card_grid:nth-child(5) .card_grid_inner.name_hover:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+.home_grid .card_grid:nth-child(5) .card_grid_inner.name_hover::before {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+}
+
+.home_grid .card_grid:nth-child(6) .card_grid_inner {
+  background: url("../img/Grid_Hagrid.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.home_grid .card_grid:nth-child(6) .card_grid_inner.name_hover:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.home_grid .card_grid:nth-child(6) .card_grid_inner.name_hover::before {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.home_grid .card_grid .card_grid_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
-  background: #e8e9e3;
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+  color: #e8e9e3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.home_grid .card_grid .card_grid_inner.name_hover {
+  position: relative;
+}
+
+.home_grid .card_grid .card_grid_inner.name_hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #161616;
+  opacity: 0.5;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.home_grid .card_grid .card_grid_inner.name_hover #name_hover_anim {
+  position: relative;
+  z-index: 2;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
