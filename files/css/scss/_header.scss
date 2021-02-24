@@ -4,7 +4,7 @@ header {
     height: 100%;
     overflow: hidden;
 
-    a.aside_link {
+    .aside_link {
         position: absolute;
         top: 0;
         right: 0;
@@ -59,10 +59,10 @@ header {
     .container {
         position: relative;
         z-index: 2;
-        margin: 0 auto;
-        transform: translateY(-60px);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        transform: translateY(-60px);
         width: 90%;
         height: 450px;
         overflow: hidden;
@@ -78,7 +78,7 @@ header {
             }
         }
         .right_side {
-            @extend .left_side;
+            overflow: hidden;
 
             .right_side_inner {
                 @include flexMidColumn;
@@ -129,5 +129,33 @@ header {
                 }
             }
         }
+    }
+}
+
+// Media Queries :
+@media screen and (max-width: 890px) {
+    header .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    header .container .left_side {
+        order: 2;
+    }
+    header .container .right_side {
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    header .title h1 {
+        font-size: 46px;
+    }
+    header .aside_link {
+        padding: 15px 20px;
+    }
+    header .container .left_side {
+        display: none;
+    }
+    header .container .right_side_inner p {
+        font-size: 18px;
     }
 }
