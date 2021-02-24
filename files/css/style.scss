@@ -6,7 +6,7 @@
 // Variables :
 $main-color: #e8e9e3;
 $secondary-color: #b53910;
-$tertiary-color: #d94e39;
+$tertiary-color: #e34a32;
 
 $contrast-grey: #6f6d6a;
 $contrast-orange: #992e0a;
@@ -35,6 +35,11 @@ body {
     background: $main-color;
 }
 
+::selection {
+    color: $main-color;
+    background: $secondary-font-color;
+}
+
 .separator {
     display: flex;
     align-items: center;
@@ -57,7 +62,6 @@ body {
     }
     .paragraphe_symbol {
         margin: 0 20px;
-        transform: rotate(90deg);
         font-size: 20px;
     }
 }
