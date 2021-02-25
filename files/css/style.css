@@ -26,10 +26,6 @@ body {
   background: #e0a696;
 }
 
-.lock_scroll {
-  overflow: hidden !important;
-}
-
 .separator {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -68,13 +68,26 @@ for (let i = 0; i < gridNamesHover.length; i++) {
     });
 }
 
+// LocoScroll :
+const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    multiplier: 1.2, // Vitesse du scroll
+});
+
 // Introduction :
 introductionAnim();
 
 function introductionAnim() {
-    document.body.classList.add("lock_scroll");
+    scroll.stop(); // Disable scroll during the Introduction
+
     anime
-        .timeline({ loop: false })
+        .timeline({
+            loop: false,
+            complete: () => {
+                scroll.start(); // Activate scroll during the Introduction
+            },
+        })
         .add(
             {
                 targets: ".title",
@@ -128,7 +141,7 @@ function introductionAnim() {
         )
         .add(
             {
-                targets: ".paragraphe_symbol",
+                targets: ".header_separator .paragraphe_symbol",
                 duration: 1800,
                 opacity: [0, 1],
                 rotate: [0, "90deg"],
@@ -138,7 +151,7 @@ function introductionAnim() {
         )
         .add(
             {
-                targets: ".separator .line",
+                targets: ".separator.header_separator .line",
                 duration: 1800,
                 opacity: [0, 1],
                 scaleX: [0, 1],
@@ -146,35 +159,53 @@ function introductionAnim() {
             },
             3100
         );
-    finalIntro();
 }
-
-function finalIntro() {
-    document.body.classList.remove("lock_scroll");
-}
-
-// LocoScroll :
-const scroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    multiplier: 1.2, // Vitesse du scroll
-});
 
 // Intersection Observer :
-let gridSectionOpening = document.querySelector(".home_grid");
+const gridSectionOpening = document.querySelector(".home_grid");
 
 let observer = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if (entry.intersectionRatio > 0.3) {
-                anime({
-                    targets: ".card_grid .card_grid_inner",
-                    duration: 3000,
-                    translateY: ["100%", 0],
-                    delay: anime.stagger(100),
-                    easing: "easeOutExpo",
-                });
-                observer.unobserve(gridSectionOpening);
+                anime
+                    .timeline({ loop: false, complete: () => observer.unobserve(gridSectionOpening) })
+                    .add({
+                        targets: ".card_grid .card_grid_inner",
+                        duration: 3000,
+                        translateY: ["100%", 0],
+                        delay: anime.stagger(100),
+                        easing: "easeOutExpo",
+                    })
+                    .add(
+                        {
+                            targets: ".footer_separator .paragraphe_symbol",
+                            duration: 1800,
+                            opacity: [0, 1],
+                            rotate: [0, "90deg"],
+                            easing: "cubicBezier(0.5, 0, 0, 1)",
+                        },
+                        800
+                    )
+                    .add(
+                        {
+                            targets: ".separator.footer_separator .line",
+                            duration: 1800,
+                            opacity: [0, 1],
+                            scaleX: [0, 1],
+                            easing: "cubicBezier(0.5, 0, 0, 1)",
+                        },
+                        800
+                    )
+                    .add(
+                        {
+                            targets: ".aside_link",
+                            duration: 1600,
+                            translateY: ["100%", 0],
+                            easing: "easeOutExpo",
+                        },
+                        1600
+                    );
             }
         });
     },
