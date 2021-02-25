@@ -26,6 +26,10 @@ body {
   background: #e0a696;
 }
 
+.lock_scroll {
+  overflow: hidden !important;
+}
+
 .separator {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -366,6 +370,8 @@ header .container .right_side .right_side_inner button span {
   padding: 50px;
   font-size: 22px;
   color: #e8e9e3;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -394,11 +400,11 @@ header .container .right_side .right_side_inner button span {
   font-size: 24px;
   font-family: "Montserrat", sans-serif;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .home_grid .card_grid .card_grid_inner.name_hover #name_hover_anim .letter {
   opacity: 0;
-  pointer-events: none;
 }
 
 footer {

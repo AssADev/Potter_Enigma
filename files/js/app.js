@@ -1,3 +1,21 @@
+// Custom Letterize :
+const potterEnigmaTitle = document.querySelector("header .title h1");
+potterEnigmaTitle.innerHTML = letterizeSpan(potterEnigmaTitle);
+
+const potterEnigmaDesc = document.querySelector("header .title p");
+potterEnigmaDesc.innerHTML = letterizeSpan(potterEnigmaDesc);
+
+const gridNamesHoverSpan = document.querySelectorAll(".name_hover #name_hover_anim");
+gridNamesHoverSpan.forEach((gridNameHoverSpan) => (gridNameHoverSpan.innerHTML = letterizeSpan(gridNameHoverSpan)));
+
+const gridSentences = document.querySelectorAll(".card_grid_inner p");
+gridSentences.forEach((gridSentence) => (gridSentence.innerHTML = letterizeSpan(gridSentence)));
+
+// Functions Animations :
+function letterizeSpan(element) {
+    return element.textContent.replace(/\S/g, `<span class="letter">$&</span>`);
+}
+
 // Hover for grid sections :
 const gridNamesHover = document.querySelectorAll(".name_hover");
 
@@ -5,6 +23,7 @@ let finishAnim;
 let gridMouseOut;
 
 for (let i = 0; i < gridNamesHover.length; i++) {
+    // Letter animations :
     gridNamesHover[i].addEventListener("mouseenter", () => {
         gridMouseOut = false;
         finishAnim = false;
@@ -19,7 +38,6 @@ for (let i = 0; i < gridNamesHover.length; i++) {
             delay: (el, i) => 40 + 30 * i,
             complete: function (anim) {
                 finishAnim = true;
-                console.log(finishAnim, gridMouseOut);
                 if (finishAnim == true && gridMouseOut == true) {
                     let hoverGridAnimOut = anime({
                         targets: gridNamesHover[i].querySelectorAll("#name_hover_anim .letter"),
@@ -50,35 +68,11 @@ for (let i = 0; i < gridNamesHover.length; i++) {
     });
 }
 
-// Custom Letterize :
-const potterEnigmaTitle = document.querySelector("header .title h1");
-potterEnigmaTitle.innerHTML = letterizeSpan(potterEnigmaTitle);
-
-const potterEnigmaDesc = document.querySelector("header .title p");
-potterEnigmaDesc.innerHTML = letterizeSpan(potterEnigmaDesc);
-
-const gridNamesHoverSpan = document.querySelectorAll(".name_hover #name_hover_anim");
-gridNamesHoverSpan.forEach((gridNameHoverSpan) => (gridNameHoverSpan.innerHTML = letterizeSpan(gridNameHoverSpan)));
-
-const gridSentences = document.querySelectorAll(".card_grid_inner p");
-gridSentences.forEach((gridSentence) => (gridSentence.innerHTML = letterizeSpan(gridSentence)));
-
-// Functions Animations :
-function letterizeSpan(element) {
-    return element.textContent.replace(/\S/g, `<span class="letter">$&</span>`);
-}
-
-// LocoScroll :
-const scroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    multiplier: 1.2, // Vitesse du scroll
-});
-
 // Introduction :
-// introductionAnim();
+introductionAnim();
 
 function introductionAnim() {
+    document.body.classList.add("lock_scroll");
     anime
         .timeline({ loop: false })
         .add(
@@ -152,4 +146,41 @@ function introductionAnim() {
             },
             3100
         );
+    finalIntro();
 }
+
+function finalIntro() {
+    document.body.classList.remove("lock_scroll");
+}
+
+// LocoScroll :
+const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    multiplier: 1.2, // Vitesse du scroll
+});
+
+// Intersection Observer :
+let gridSectionOpening = document.querySelector(".home_grid");
+
+let observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.intersectionRatio > 0.3) {
+                anime({
+                    targets: ".card_grid .card_grid_inner",
+                    duration: 3000,
+                    translateY: ["100%", 0],
+                    delay: anime.stagger(100),
+                    easing: "easeOutExpo",
+                });
+                observer.unobserve(gridSectionOpening);
+            }
+        });
+    },
+    {
+        threshold: [0.3],
+    }
+);
+
+observer.observe(gridSectionOpening);

@@ -85,6 +85,7 @@
             padding: 50px;
             font-size: 22px;
             color: $main-color;
+            transform: translateY(100%);
             transition: 0.3s;
 
             &.name_hover {
@@ -107,10 +108,10 @@
                     font-size: 24px;
                     font-family: "Montserrat", sans-serif;
                     overflow: hidden;
+                    pointer-events: none;
 
                     .letter {
                         opacity: 0;
-                        pointer-events: none;
                     }
                 }
             }
