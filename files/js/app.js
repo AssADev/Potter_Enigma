@@ -1,7 +1,5 @@
-// Functions Animations :
-function letterizeSpan(element) {
-    return element.textContent.replace(/\S/g, `<span class="letter">$&</span>`);
-}
+// Hover for grid sections :
+const gridNamesHover = document.querySelectorAll(".name_hover");
 
 // Custom Letterize :
 const potterEnigmaTitle = document.querySelector("header .title h1");
@@ -10,11 +8,16 @@ potterEnigmaTitle.innerHTML = letterizeSpan(potterEnigmaTitle);
 const potterEnigmaDesc = document.querySelector("header .title p");
 potterEnigmaDesc.innerHTML = letterizeSpan(potterEnigmaDesc);
 
-const gridNamesHover = document.querySelectorAll(".name_hover");
-gridNamesHover.forEach((gridNameHover) => (gridNameHover.innerHTML = letterizeSpan(gridNameHover)));
+const gridNamesHoverSpan = document.querySelectorAll(".name_hover #name_hover_anim");
+gridNamesHoverSpan.forEach((gridNameHoverSpan) => (gridNameHoverSpan.innerHTML = letterizeSpan(gridNameHoverSpan)));
 
 const gridSentences = document.querySelectorAll(".card_grid_inner p");
 gridSentences.forEach((gridSentence) => (gridSentence.innerHTML = letterizeSpan(gridSentence)));
+
+// Functions Animations :
+function letterizeSpan(element) {
+    return element.textContent.replace(/\S/g, `<span class="letter">$&</span>`);
+}
 
 // Introduction :
 // introductionAnim();
