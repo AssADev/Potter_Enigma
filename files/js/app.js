@@ -1,6 +1,55 @@
 // Hover for grid sections :
 const gridNamesHover = document.querySelectorAll(".name_hover");
 
+let finishAnim;
+let gridMouseOut;
+
+for (let i = 0; i < gridNamesHover.length; i++) {
+    gridNamesHover[i].addEventListener("mouseenter", () => {
+        gridMouseOut = false;
+        finishAnim = false;
+
+        let hoverGridAnimEnter = anime({
+            targets: gridNamesHover[i].querySelectorAll(`#name_hover_anim .letter`),
+            duration: 800,
+            opacity: [0, 1],
+            rotate: [-20, 0],
+            translateY: ["100%", 0],
+            easing: "easeOutExpo",
+            delay: (el, i) => 40 + 30 * i,
+            complete: function (anim) {
+                finishAnim = true;
+                console.log(finishAnim, gridMouseOut);
+                if (finishAnim == true && gridMouseOut == true) {
+                    let hoverGridAnimOut = anime({
+                        targets: gridNamesHover[i].querySelectorAll("#name_hover_anim .letter"),
+                        duration: 800,
+                        opacity: [1, 0],
+                        rotate: [0, -10],
+                        translateY: [0, "-100%"],
+                        easing: "easeInExpo",
+                        delay: (el, i) => 30 * i,
+                    });
+                }
+            },
+        });
+    });
+    gridNamesHover[i].addEventListener("mouseout", () => {
+        gridMouseOut = true;
+        if (finishAnim == true && gridMouseOut == true) {
+            anime({
+                targets: gridNamesHover[i].querySelectorAll("#name_hover_anim .letter"),
+                duration: 800,
+                opacity: [1, 0],
+                rotate: [0, -10],
+                translateY: [0, "-100%"],
+                easing: "easeInExpo",
+                delay: (el, i) => 30 * i,
+            });
+        }
+    });
+}
+
 // Custom Letterize :
 const potterEnigmaTitle = document.querySelector("header .title h1");
 potterEnigmaTitle.innerHTML = letterizeSpan(potterEnigmaTitle);
@@ -18,6 +67,13 @@ gridSentences.forEach((gridSentence) => (gridSentence.innerHTML = letterizeSpan(
 function letterizeSpan(element) {
     return element.textContent.replace(/\S/g, `<span class="letter">$&</span>`);
 }
+
+// LocoScroll :
+const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    multiplier: 1.2, // Vitesse du scroll
+});
 
 // Introduction :
 // introductionAnim();
@@ -95,14 +151,5 @@ function introductionAnim() {
                 easing: "cubicBezier(0.5, 0, 0, 1)",
             },
             3100
-        )
-        .add(
-            {
-                targets: ".aside_link",
-                duration: 2000,
-                translateY: ["-100%", 0],
-                easing: "easeOutExpo",
-            },
-            3800
         );
 }

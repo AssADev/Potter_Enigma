@@ -9,59 +9,61 @@
         <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     </head>
     <body>
-        <header>
-            <div class="title">
-                <h1>Potter Enigma</h1>
-                <p>A quizz that isn't for Muggles</p>
-            </div>
-            <div class="container">
-                <div class="left_side"><div class="left_side_inner"></div></div>
-                <div class="right_side">
-                    <div class="right_side_inner">
-                        <p>This quiz will test your knowledge of the fabulous Harry Potter saga, but beware, there are pitfalls.</p>
-                        <p>You will have each time a question with 3 possible answers, but only one of them is correct.</p>
-                        <button class="start_quizz"><span>Start the quizz</span></button>
+        <div data-scroll-container>
+            <header data-scroll-section>
+                <div class="title">
+                    <h1>Potter Enigma</h1>
+                    <p>A quizz that isn't for Muggles</p>
+                </div>
+                <div class="container">
+                    <div class="left_side"><div class="left_side_inner"></div></div>
+                    <div class="right_side">
+                        <div class="right_side_inner">
+                            <p>This quiz will test your knowledge of the fabulous Harry Potter saga, but beware, there are pitfalls.</p>
+                            <p>You will have each time a question with 3 possible answers, but only one of them is correct.</p>
+                            <button class="start_quizz"><span>Start the quizz</span></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="separator header_separator">
-                <span class="line"></span>
-                <span class="paragraphe_symbol">§</span>
-                <span class="line"></span>
-            </div>
-        </header>
-        <section class="home_grid">
-            <div class="card_grid">
-                <div class="card_grid_inner name_hover"><span id="name_hover_anim">Ginny Weasley</span></div>
-            </div>
-            <div class="card_grid">
-                <div class="card_grid_inner">
-                    <p>J. K. Rowling has done a magnificent job of creating this adventure in this magical world that enchants us all.</p>
+                <div class="separator header_separator">
+                    <span class="line"></span>
+                    <span class="paragraphe_symbol">§</span>
+                    <span class="line"></span>
                 </div>
-            </div>
-            <div class="card_grid">
-                <div class="card_grid_inner name_hover"><span id="name_hover_anim">Luna Lovegood</span></div>
-            </div>
-            <div class="card_grid">
-                <div class="card_grid_inner">
-                    <p>Each character in this story lives countless adventures, but they work hand in hand to increase their powers.</p>
+            </header>
+            <section class="home_grid" data-scroll-section>
+                <div class="card_grid">
+                    <div class="card_grid_inner name_hover"><span id="name_hover_anim">Ginny Weasley</span></div>
                 </div>
-            </div>
-            <div class="card_grid">
-                <div class="card_grid_inner name_hover"><span id="name_hover_anim">Harry Potter</span></div>
-            </div>
-            <div class="card_grid">
-                <div class="card_grid_inner name_hover"><span id="name_hover_anim">Rubeus Hagrid</span></div>
-            </div>
-        </section>
-        <footer>
-            <div class="separator footer_separator">
-                <span class="line"></span>
-                <span class="paragraphe_symbol">§</span>
-                <span class="line"></span>
-            </div>
-            <a class="aside_link" href="https://github.com/AssADev" target="_blank"><span>Made by AssA</span></a>
-        </footer>
+                <div class="card_grid">
+                    <div class="card_grid_inner">
+                        <p>J. K. Rowling has done a magnificent job of creating this adventure in this magical world that enchants us all.</p>
+                    </div>
+                </div>
+                <div class="card_grid">
+                    <div class="card_grid_inner name_hover"><span id="name_hover_anim">Luna Lovegood</span></div>
+                </div>
+                <div class="card_grid">
+                    <div class="card_grid_inner">
+                        <p>Each character in this story lives countless adventures, but they work hand in hand to increase their powers.</p>
+                    </div>
+                </div>
+                <div class="card_grid">
+                    <div class="card_grid_inner name_hover"><span id="name_hover_anim">Harry Potter</span></div>
+                </div>
+                <div class="card_grid">
+                    <div class="card_grid_inner name_hover"><span id="name_hover_anim">Rubeus Hagrid</span></div>
+                </div>
+            </section>
+            <footer data-scroll-section>
+                <div class="separator footer_separator">
+                    <span class="line"></span>
+                    <span class="paragraphe_symbol">§</span>
+                    <span class="line"></span>
+                </div>
+                <a class="aside_link" href="https://github.com/AssADev" target="_blank"><span>Made by AssA</span></a>
+            </footer>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <script src="../js/locoscroll.js"></script>
         <script type="text/javascript" src="../js/app.js"></script>

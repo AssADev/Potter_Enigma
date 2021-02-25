@@ -201,7 +201,7 @@
             firefoxMultiplier: 50,
             touchMultiplier: 2,
             resetNativeScroll: !0,
-            tablet: { smooth: !1, direction: "vertical", gestureDirection: "vertical", breakpoint: 1024 },
+            tablet: { smooth: !1, direction: "vertical", gestureDirection: "vertical" },
             smartphone: { smooth: !1, direction: "vertical", gestureDirection: "vertical" },
         },
         b = (function () {
