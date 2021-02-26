@@ -556,7 +556,13 @@ main .title .title_inner p {
   margin-bottom: 35px;
 }
 
-main .title .title_inner button {
+main .title .title_inner .start_button {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+main .title .title_inner .start_button button {
   position: relative;
   width: 100%;
   border: none;
@@ -565,14 +571,14 @@ main .title .title_inner button {
   font-family: "Montserrat", sans-serif;
 }
 
-main .title .title_inner button:hover::before {
+main .title .title_inner .start_button button:hover::before {
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
 }
 
-main .title .title_inner button::before {
+main .title .title_inner .start_button button::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -590,7 +596,7 @@ main .title .title_inner button::before {
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-main .title .title_inner button span {
+main .title .title_inner .start_button button span {
   position: relative;
   z-index: 2;
   color: #e8e9e3;
@@ -603,6 +609,7 @@ main .title .title_inner a {
   color: #e0a696;
   font-size: 16px;
   margin-top: 10px;
+  opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }

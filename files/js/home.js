@@ -76,9 +76,9 @@ const scroll = new LocomotiveScroll({
 });
 
 // Introduction :
-introductionAnim();
+introductionHomeAnim();
 
-function introductionAnim() {
+function introductionHomeAnim() {
     scroll.stop(); // Disable scroll during the Introduction
 
     anime
@@ -90,7 +90,7 @@ function introductionAnim() {
         })
         .add(
             {
-                targets: ".title",
+                targets: "header .title",
                 duration: 2000,
                 height: ["100%", "40%"],
                 easing: "easeOutExpo",
@@ -217,6 +217,9 @@ let observer = new IntersectionObserver(
 observer.observe(gridSectionOpening);
 
 // Barba.js :
+// --> Too difficult to integrate with Locomotive Scroll, but this code works without Locomotive Scroll.
+
+/*
 function delay(n) {
     n = n || 2000;
     return new Promise((done) => {
@@ -225,6 +228,14 @@ function delay(n) {
         }, n);
     });
 }
+
+barba.hooks.afterEnter(() => {
+    scroll.destroy();
+});
+
+barba.hooks.after(() => {
+    scroll.init();
+});
 
 barba.init({
     transitions: [
@@ -270,7 +281,11 @@ barba.init({
                         },
                         0
                     );
+                setTimeout(() => {
+                    introductionAnim();
+                }, 100);
             },
         },
     ],
 });
+*/
