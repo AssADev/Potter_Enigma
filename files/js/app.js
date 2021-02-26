@@ -1,8 +1,8 @@
 // Custom Letterize :
-const potterEnigmaTitle = document.querySelector("header .title h1");
+const potterEnigmaTitle = document.querySelector(".title h1");
 potterEnigmaTitle.innerHTML = letterizeSpan(potterEnigmaTitle);
 
-const potterEnigmaDesc = document.querySelector("header .title p");
+const potterEnigmaDesc = document.querySelector(".title p");
 potterEnigmaDesc.innerHTML = letterizeSpan(potterEnigmaDesc);
 
 const gridNamesHoverSpan = document.querySelectorAll(".name_hover #name_hover_anim");

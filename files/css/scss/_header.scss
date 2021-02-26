@@ -63,13 +63,14 @@ header {
                 p:first-child {
                     margin-bottom: 20px;
                 }
-                button {
+                a {
                     position: absolute;
                     bottom: 0;
                     width: 100%;
                     border: none;
                     background: $secondary-color;
                     padding: 20px;
+                    font-family: "Montserrat", sans-serif;
 
                     &:hover::before {
                         transform-origin: center bottom;
