@@ -215,3 +215,62 @@ let observer = new IntersectionObserver(
 );
 
 observer.observe(gridSectionOpening);
+
+// Barba.js :
+function delay(n) {
+    n = n || 2000;
+    return new Promise((done) => {
+        setTimeout(() => {
+            done();
+        }, n);
+    });
+}
+
+barba.init({
+    transitions: [
+        {
+            name: "grid_side_transition",
+            async leave(data) {
+                anime
+                    .timeline({ loop: false })
+                    .add({
+                        targets: ".loading_screen_left_inner",
+                        duration: 1400,
+                        translateX: ["-100%", 0],
+                        easing: "cubicBezier(0.5, 0, 0, 1)",
+                    })
+                    .add(
+                        {
+                            targets: ".loading_screen_right_inner",
+                            duration: 1400,
+                            translateX: ["100%", 0],
+                            easing: "cubicBezier(0.5, 0, 0, 1)",
+                        },
+                        0
+                    );
+                const done = this.async();
+                await delay(1500);
+                done();
+            },
+            async enter(data) {
+                anime
+                    .timeline({ loop: false })
+                    .add({
+                        targets: ".loading_screen_left_inner",
+                        duration: 1400,
+                        translateX: [0, "100%"],
+                        easing: "cubicBezier(0.5, 0, 0, 1)",
+                    })
+                    .add(
+                        {
+                            targets: ".loading_screen_right_inner",
+                            duration: 1400,
+                            translateX: [0, "-100%"],
+                            easing: "cubicBezier(0.5, 0, 0, 1)",
+                        },
+                        0
+                    );
+            },
+        },
+    ],
+});

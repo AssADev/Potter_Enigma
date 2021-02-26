@@ -8,17 +8,28 @@
         <link rel="stylesheet" href="../css/style.css" />
         <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     </head>
-    <body>
-        <main>
-            <div class="title">
-                <div class="title_inner">
-                    <h1>Potter Enigma</h1>
-                    <p>If you're ready, you can launch the quizz</p>
-                    <button id="start_quizz"><span>Launch the quizz</span></button>
-                    <a href="index.html">Back home</a>
-                </div>
+    <body data-barba="wrapper">
+        <div class="load_container">
+            <div class="loading_screen_left">
+                <div class="loading_screen_left_inner"></div>
             </div>
-        </main>
+            <div class="loading_screen_right">
+                <div class="loading_screen_right_inner"></div>
+            </div>
+        </div>
+        <div data-barba="container" data-barba-namespace="quizz">
+            <main>
+                <div class="title">
+                    <div class="title_inner">
+                        <h1>Potter Enigma</h1>
+                        <p>If you're ready, you can launch the quizz</p>
+                        <button id="start_quizz"><span>Launch the quizz</span></button>
+                        <a href="index.html">Back home</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="https://unpkg.com/@barba/core"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <script src="../js/locoscroll.js"></script>
         <script type="text/javascript" src="../js/quizz.js"></script>

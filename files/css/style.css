@@ -628,6 +628,44 @@ main .title .title_inner a::before {
   transition: 0.3s;
 }
 
+.load_container {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.load_container .loading_screen_left,
+.load_container .loading_screen_right {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.load_container .loading_screen_left .loading_screen_left_inner, .load_container .loading_screen_left .loading_screen_right_inner,
+.load_container .loading_screen_right .loading_screen_left_inner,
+.load_container .loading_screen_right .loading_screen_right_inner {
+  width: 100%;
+  height: 100%;
+  background: #cf4213;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.load_container .loading_screen_left .loading_screen_right_inner,
+.load_container .loading_screen_right .loading_screen_right_inner {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
 html.has-scroll-smooth {
   overflow: hidden;
 }

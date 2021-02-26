@@ -16,6 +16,8 @@ $contrast-black: #161616;
 $main-font-color: #f2f2f2;
 $secondary-font-color: #e0a696;
 
+$loading-screen: #cf4213;
+
 $griffondor: #ef4634;
 $serpentard: #378b6e;
 $serdaigle: #242586;
@@ -92,4 +94,5 @@ button {
 @import "scss/_header.scss";
 @import "scss/_home_grid.scss";
 @import "scss/_main_quizz.scss";
+@import "scss/_loading_screen.scss";
 @import "scss/_locoscroll.scss";
