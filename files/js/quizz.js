@@ -59,3 +59,52 @@ function introductionQuizzAnim() {
             3000
         );
 }
+
+// Quizz :
+const startQuizzBtn = document.getElementById("start_quizz");
+
+startQuizzBtn.addEventListener("click", () => {
+    launchQuizzAnim();
+    let points = 0;
+});
+
+// Variables for the Quizz :
+function launchQuizzAnim() {
+    anime({
+        targets: "section.quizz",
+        duration: 1600,
+        translateY: ["-100%", 0],
+        easing: "easeOutExpo",
+        delay: 300,
+    });
+}
+
+const questionAnswer = [
+    {
+        question: "Question N°1",
+        answers: {
+            a: "Answer N°1",
+            b: "Answer N°2",
+            c: "Answer N°3",
+        },
+        correctAnswer: "c",
+    },
+    {
+        question: "Question N°2",
+        answers: {
+            a: "Answer N°1",
+            b: "Answer N°2",
+            c: "Answer N°3",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question: "Question N°3",
+        answers: {
+            a: "Answer N°1",
+            b: "Answer N°2",
+            c: "Answer N°3",
+        },
+        correctAnswer: "b",
+    },
+];
