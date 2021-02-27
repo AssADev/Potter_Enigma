@@ -68,7 +68,19 @@ startQuizzBtn.addEventListener("click", () => {
     let points = 0;
 });
 
+const answers = document.querySelectorAll(".answer");
+answers.forEach((answer) =>
+    answer.addEventListener("click", () => {
+        if (document.querySelector(".answer.selected") !== null) {
+            document.querySelector(".answer.selected").classList.remove("selected");
+        }
+        answer.classList.add("selected");
+    })
+);
+
 // Variables for the Quizz :
+launchQuizzAnim();
+
 function launchQuizzAnim() {
     anime({
         targets: "section.quizz",
