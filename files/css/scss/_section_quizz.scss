@@ -6,7 +6,7 @@ section.quizz {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: 500px 1fr;
     background: $main-color;
 
     .left_side {
@@ -31,6 +31,7 @@ section.quizz {
                 width: 100%;
                 height: 90px;
                 background: $secondary-color;
+                overflow: hidden;
 
                 #question_number {
                     @include flexMid;
@@ -114,6 +115,7 @@ section.quizz {
                 height: 100%;
                 display: grid;
                 row-gap: 40px;
+                overflow: hidden;
 
                 .answer {
                     @include flexMid;

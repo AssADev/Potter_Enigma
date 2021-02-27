@@ -645,8 +645,8 @@ section.quizz {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 40% 1fr;
-      grid-template-columns: 40% 1fr;
+  -ms-grid-columns: 500px 1fr;
+      grid-template-columns: 500px 1fr;
   background: #e8e9e3;
 }
 
@@ -688,6 +688,7 @@ section.quizz .left_side .left_side_inner .quizz_title {
   width: 100%;
   height: 90px;
   background: #b53910;
+  overflow: hidden;
 }
 
 section.quizz .left_side .left_side_inner .quizz_title #question_number {
@@ -800,6 +801,7 @@ section.quizz .right_side .right_side_inner .answers {
   display: -ms-grid;
   display: grid;
   row-gap: 40px;
+  overflow: hidden;
 }
 
 section.quizz .right_side .right_side_inner .answers .answer {

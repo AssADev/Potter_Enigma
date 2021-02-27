@@ -71,18 +71,7 @@ startQuizzBtn.addEventListener("click", () => {
     let points = 0;
 });
 
-// Quizz functionnalities :
-const submitBtn = document.getElementById("submit_answer");
-
-submitBtn.addEventListener("click", () => {
-    if (document.querySelector(".answer.selected") == null) {
-        return;
-    } else {
-        let userAnswer = document.querySelector(".answer.selected").getAttribute("data-answer");
-        console.log(userAnswer);
-    }
-});
-
+// Quizz answers :
 const answers = document.querySelectorAll(".answer");
 answers.forEach((answer) =>
     answer.addEventListener("click", () => {
@@ -94,7 +83,7 @@ answers.forEach((answer) =>
 );
 
 // Variables for the Quizz :
-launchQuizzAnim();
+// launchQuizzAnim();
 
 function launchQuizzAnim() {
     anime
@@ -162,14 +151,15 @@ function launchQuizzAnim() {
         );
 }
 
+// Questions for the quizz
 const questionAnswer = [
     {
         question_title: "Question N°1",
         question_description: "Description N°1",
         answers: {
-            a: "Answer N°1",
-            b: "Answer N°2",
-            c: "Answer N°3",
+            a: "Answer N°1 - 1",
+            b: "Answer N°2 - 1",
+            c: "Answer N°3 - 1",
         },
         correctAnswer: "c",
     },
@@ -177,9 +167,9 @@ const questionAnswer = [
         question_title: "Question N°2",
         question_description: "Description N°2",
         answers: {
-            a: "Answer N°1",
-            b: "Answer N°2",
-            c: "Answer N°3",
+            a: "Answer N°1 - 2",
+            b: "Answer N°2 - 2",
+            c: "Answer N°3 - 2",
         },
         correctAnswer: "a",
     },
@@ -187,10 +177,169 @@ const questionAnswer = [
         question_title: "Question N°3",
         question_description: "Description N°3",
         answers: {
-            a: "Answer N°1",
-            b: "Answer N°2",
-            c: "Answer N°3",
+            a: "Answer N°1 - 3",
+            b: "Answer N°2 - 3",
+            c: "Answer N°3 - 3",
         },
         correctAnswer: "b",
     },
 ];
+
+// Quizz functionnalities :
+const submitBtn = document.getElementById("submit_answer");
+const questionTitle = document.getElementById("question_title");
+const questionDescription = document.querySelector(".description");
+
+const firstAnswer = document.querySelector(".answer[data-answer='a'] p");
+const secondaryAnswer = document.querySelector(".answer[data-answer='b'] p");
+const thirdAnswer = document.querySelector(".answer[data-answer='c'] p");
+
+let authorizeAnswerBtn = true;
+let userAnswer;
+let currentIndex = 0;
+let userGoodAnswer = [];
+
+submitBtn.addEventListener("click", () => {
+    if (authorizeAnswerBtn) {
+        if (document.querySelector(".answer.selected") == null) {
+            return;
+        } else {
+            userAnswer = document.querySelector(".answer.selected").getAttribute("data-answer");
+
+            currentIndex++;
+            loadQuestion(currentIndex);
+            if (currentIndex > questionAnswer.length) {
+                console.log("too much");
+            }
+            console.log(userAnswer);
+        }
+    }
+});
+
+// Function to change the question :
+function loadQuestion(questionIndex) {
+    if (questionIndex >= questionAnswer.length) {
+        return;
+    } else {
+        transitionQuestionAnim(questionIndex);
+        // transitionNextQuestion(questionIndex);
+
+        console.log(questionIndex);
+    }
+}
+
+function transitionQuestionAnim(questionIndex) {
+    anime
+        .timeline({ loop: false, begin: () => (authorizeAnswerBtn = false), complete: () => (authorizeAnswerBtn = true) })
+        .add(
+            {
+                targets: "#question_number p .letter",
+                duration: 1600,
+                translateY: [0, "100%"],
+                easing: "easeOutExpo",
+                delay: anime.stagger(150),
+                complete: () => {
+                    // Change the number of the question :
+                    if (questionIndex < 9) {
+                        questionNumber.innerHTML = `0${questionIndex + 1}`;
+                    } else {
+                        questionNumber.innerHTML = `${questionIndex + 1}`;
+                    }
+                    questionNumber.innerHTML = letterizeSpan(questionNumber);
+
+                    anime({
+                        targets: "#question_number p .letter",
+                        duration: 1600,
+                        translateY: ["-100%", 0],
+                        easing: "easeOutExpo",
+                        delay: anime.stagger(150),
+                    });
+                },
+            },
+            500
+        )
+        .add(
+            {
+                targets: "#question_title",
+                duration: 1600,
+                translateY: [0, "200%"],
+                easing: "easeOutExpo",
+                complete: () => {
+                    questionTitle.innerText = questionAnswer[questionIndex].question_title; // Change the title of the question
+
+                    anime({
+                        targets: "#question_title",
+                        duration: 1600,
+                        translateY: ["-200%", 0],
+                        easing: "easeOutExpo",
+                    });
+                },
+            },
+            200
+        )
+        .add(
+            {
+                targets: ".description",
+                duration: 2000,
+                opacity: [1, 0],
+                easing: "easeOutExpo",
+                complete: () => {
+                    questionDescription.innerText = questionAnswer[questionIndex].question_description; // Change the description of the question
+
+                    anime({
+                        targets: ".description",
+                        duration: 2000,
+                        opacity: [0, 1],
+                        easing: "easeOutExpo",
+                    });
+                },
+            },
+            700
+        )
+        .add(
+            {
+                targets: ".answer",
+                duration: 1600,
+                translateX: [0, "-100%"],
+                easing: "easeOutExpo",
+                delay: anime.stagger(150),
+                complete: () => {
+                    document.querySelector(".answer.selected").classList.remove("selected"); // Delete the last selected answer
+
+                    // Change the answer :
+                    firstAnswer.innerText = questionAnswer[questionIndex].answers.a;
+                    secondaryAnswer.innerText = questionAnswer[questionIndex].answers.b;
+                    thirdAnswer.innerText = questionAnswer[questionIndex].answers.c;
+
+                    anime({
+                        targets: ".answer",
+                        duration: 1600,
+                        translateX: ["100%", 0],
+                        easing: "easeOutExpo",
+                        delay: anime.stagger(150),
+                    });
+                },
+            },
+            600
+        );
+}
+
+// Launch the first question :
+setupLaunchQuestion(0);
+function setupLaunchQuestion(questionIndex) {
+    // Change the number of the question :
+    if (questionIndex < 9) {
+        questionNumber.innerHTML = `0${questionIndex + 1}`;
+    } else {
+        questionNumber.innerHTML = `${questionIndex + 1}`;
+    }
+    questionNumber.innerHTML = letterizeSpan(questionNumber);
+
+    questionTitle.innerText = questionAnswer[questionIndex].question_title; // Change the title of the question
+    questionDescription.innerText = questionAnswer[questionIndex].question_description; // Change the description of the question
+
+    // Change the answer :
+    firstAnswer.innerText = questionAnswer[questionIndex].answers.a;
+    secondaryAnswer.innerText = questionAnswer[questionIndex].answers.b;
+    thirdAnswer.innerText = questionAnswer[questionIndex].answers.c;
+}
