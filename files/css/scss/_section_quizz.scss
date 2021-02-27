@@ -5,46 +5,61 @@ section.quizz {
     transform: translateY(-100%);
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: 40% 1fr;
     background: $main-color;
 
-    .quizz_tile {
-        @include flexMid;
-
+    .left_side {
         width: 100%;
-        height: 90px;
-        background: $secondary-color;
+        height: 100%;
+        overflow: hidden;
+        background: $tertiary-color;
 
-        #question_number {
+        .left_side_inner {
             @include flexMid;
 
-            height: 100%;
-            padding: 20px;
-            background: $contrast-orange;
-
-            p {
-                font-family: "Montserrat", sans-serif;
-                font-size: 54px;
-                color: $main-color;
-            }
-        }
-        #question_title {
-            width: 100%;
-            text-align: center;
-            padding: 0 20px;
-            font-size: 32px;
-            color: $main-color;
-        }
-    }
-    .container_questions {
-        width: 90%;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 40% 1fr;
-        gap: 40px;
-
-        .description {
             position: relative;
+            width: 100%;
+            height: 100%;
 
+            .quizz_tile {
+                @include flexMid;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 90px;
+                background: $secondary-color;
+
+                #question_number {
+                    @include flexMid;
+
+                    height: 100%;
+                    padding: 20px;
+                    background: $contrast-orange;
+
+                    p {
+                        font-family: "Montserrat", sans-serif;
+                        font-size: 54px;
+                        color: $main-color;
+                    }
+                }
+                #question_title {
+                    width: 100%;
+                    text-align: center;
+                    padding: 0 20px;
+                    font-size: 26px;
+                    color: $main-color;
+                }
+            }
+            .description {
+                text-align: center;
+                color: $main-color;
+                font-size: 22px;
+                line-height: 1.8;
+                padding: 50px;
+            }
             #submit_answer {
                 position: absolute;
                 bottom: 0;
@@ -79,17 +94,28 @@ section.quizz {
                 }
             }
         }
-        .answers {
+    }
+    .right_side {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .right_side_inner {
+            @include flexMid;
+
             width: 100%;
             height: 100%;
-            overflow: hidden;
+            padding: 50px 0 50px 50px;
 
-            .answers_inner {
+            .answers {
+                width: 100%;
+                height: 100%;
                 display: grid;
-                grid-template-rows: repeat(3, auto);
-                gap: 40px;
+                row-gap: 40px;
 
                 .answer {
+                    @include flexMid;
+
                     position: relative;
                     padding: 50px;
                     background: $tertiary-color;
