@@ -14,6 +14,7 @@ main {
             position: absolute;
             top: 50%;
             left: 50%;
+            width: 358px;
             transform: translate(-50%, -50%);
             color: $main-color;
 
@@ -27,6 +28,7 @@ main {
                 font-weight: 400;
                 color: $secondary-font-color;
                 margin-bottom: 35px;
+                text-align: center;
             }
             .start_button {
                 overflow: hidden;
@@ -93,5 +95,19 @@ main {
                 }
             }
         }
+    }
+}
+
+// Media Queries :
+@media screen and (max-width: 490px) {
+    main .title .title_inner {
+        width: 100%;
+        padding: 15px;
+    }
+    main .title .title_inner h1 {
+        font-size: 46px;
+    }
+    main .title .title_inner p {
+        font-size: 18px;
     }
 }

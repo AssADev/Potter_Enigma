@@ -19,6 +19,7 @@ section.result_section {
             position: absolute;
             top: 50%;
             left: 50%;
+            width: 100%;
             transform: translate(-50%, -50%);
             color: $main-color;
 
@@ -69,5 +70,17 @@ section.result_section {
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    section.result_section .result .result_inner {
+        padding: 15px;
+    }
+    section.result_section .result .result_inner h2 {
+        font-size: 46px;
+    }
+    section.result_section .result .result_inner p {
+        font-size: 18px;
     }
 }

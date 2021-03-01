@@ -70,10 +70,14 @@ function introductionQuizzAnim() {
 const startQuizzBtn = document.getElementById("start_quizz");
 let points = 0;
 
-startQuizzBtn.addEventListener("click", () => {
-    launchQuizzAnim();
-    points = 0;
-});
+startQuizzBtn.addEventListener(
+    "click",
+    () => {
+        launchQuizzAnim();
+        points = 0;
+    },
+    { once: true }
+);
 
 // Quizz answers :
 const answers = document.querySelectorAll(".answer");
@@ -171,15 +175,18 @@ const questionAnswer = [
         question_title: "Question N°2",
         question_description: "Description N°2",
         answers: {
-            a: "Answer N°1 - 2",
+            a:
+                "Answer N°1 - 2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi unde placeat nemo nulla, nobis possimus repudiandae perspiciatis accusantium dolores voluptas minus provident enim animi. Eaque, quam? Ratione nostrum alias aliquam ipsum. Deleniti ad fuga quibusdam, expedita nihil totam quasi. Neque, cumque incidunt ab eligendi sunt error a voluptatibus quasi?",
             b: "Answer N°2 - 2",
-            c: "Answer N°3 - 2",
+            c:
+                "Answer N°3 - 2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi unde placeat nemo nulla, nobis possimus repudiandae perspiciatis accusantium dolores voluptas minus provident enim animi. Eaque, quam? Ratione nostrum alias aliquam ipsum. Deleniti ad fuga quibusdam, expedita nihil totam quasi. Neque, cumque incidunt ab eligendi sunt error a voluptatibus quasi?",
         },
         correctAnswer: "a",
     },
     {
         question_title: "Question N°3",
-        question_description: "Description N°3",
+        question_description:
+            "Description N°3 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi unde placeat nemo nulla, nobis possimus repudiandae perspiciatis accusantium dolores voluptas minus provident enim animi. Eaque, quam? Ratione nostrum alias aliquam ipsum. Deleniti ad fuga quibusdam, expedita nihil totam quasi. Neque, cumque incidunt ab eligendi sunt error a voluptatibus quasi?",
         answers: {
             a: "Answer N°1 - 3",
             b: "Answer N°2 - 3",
@@ -358,6 +365,9 @@ function resultQuizzAnim() {
                 duration: 1600,
                 translateY: ["100%", 0],
                 easing: "cubicBezier(0.5, 0, 0, 1)",
+                complete: () => {
+                    document.querySelector("section.quizz").style.display = "none";
+                },
             },
             600
         )

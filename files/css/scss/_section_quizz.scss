@@ -154,3 +154,31 @@ section.quizz {
         }
     }
 }
+
+// Media Queries :
+@media screen and (max-width: 1200px) {
+    section.quizz {
+        min-height: 100vh;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+    section.quizz .left_side,
+    section.quizz .right_side {
+        overflow: visible;
+    }
+    section.quizz .left_side .left_side_inner {
+        min-height: 340px;
+        padding-top: 90px;
+        padding-bottom: 64px;
+    }
+    section.quizz .left_side .left_side_inner .description {
+        font-size: 20px;
+        padding: 20px;
+    }
+    section.quizz .right_side .right_side_inner {
+        padding: 20px 0 0 0;
+    }
+    section.quizz .right_side .right_side_inner .answers {
+        row-gap: 20px;
+    }
+}
