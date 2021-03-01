@@ -2,8 +2,11 @@
 const potterEnigmaTitle = document.querySelector(".title h1");
 potterEnigmaTitle.innerHTML = letterizeSpan(potterEnigmaTitle);
 
-const potterEnigmaDesc = document.querySelector(".title p");
-potterEnigmaDesc.innerHTML = letterizeSpan(potterEnigmaDesc);
+const potterEnigmaTitleDesc = document.querySelector(".title p");
+potterEnigmaTitleDesc.innerHTML = letterizeSpan(potterEnigmaTitleDesc);
+
+const potterEnigmaResultTitle = document.querySelector(".result h2");
+potterEnigmaResultTitle.innerHTML = letterizeSpan(potterEnigmaResultTitle);
 
 const questionNumber = document.querySelector("#question_number p");
 questionNumber.innerHTML = letterizeSpan(questionNumber);
@@ -220,14 +223,19 @@ submitBtn.addEventListener("click", () => {
 });
 
 // Function to change the question :
+const potterEnigmaResultSentence = document.getElementById("result_sentence");
+const potterEnigmaResultNumber = document.getElementById("user_result");
+
 function loadQuestion(questionIndex) {
     if (questionIndex >= questionAnswer.length) {
-        return;
+        potterEnigmaResultNumber.innerHTML = points < 9 ? `0${points} / 0${questionAnswer.length}` : `0${points} / 0${questionAnswer.length}`;
+
+        potterEnigmaResultSentence.innerHTML = letterizeSpan(potterEnigmaResultSentence);
+        potterEnigmaResultNumber.innerHTML = letterizeSpan(potterEnigmaResultNumber);
+
+        resultQuizzAnim();
     } else {
         transitionQuestionAnim(questionIndex);
-        // transitionNextQuestion(questionIndex);
-
-        // console.log(questionIndex);
     }
 }
 
@@ -243,11 +251,7 @@ function transitionQuestionAnim(questionIndex) {
                 delay: anime.stagger(150),
                 complete: () => {
                     // Change the number of the question :
-                    if (questionIndex < 9) {
-                        questionNumber.innerHTML = `0${questionIndex + 1}`;
-                    } else {
-                        questionNumber.innerHTML = `${questionIndex + 1}`;
-                    }
+                    questionNumber.innerHTML = questionIndex < 9 ? `0${questionIndex + 1}` : `${questionIndex + 1}`;
                     questionNumber.innerHTML = letterizeSpan(questionNumber);
 
                     anime({
@@ -331,11 +335,7 @@ function transitionQuestionAnim(questionIndex) {
 setupLaunchQuestion(0);
 function setupLaunchQuestion(questionIndex) {
     // Change the number of the question :
-    if (questionIndex < 9) {
-        questionNumber.innerHTML = `0${questionIndex + 1}`;
-    } else {
-        questionNumber.innerHTML = `${questionIndex + 1}`;
-    }
+    questionNumber.innerHTML = questionIndex < 9 ? `0${questionIndex + 1}` : `${questionIndex + 1}`;
     questionNumber.innerHTML = letterizeSpan(questionNumber);
 
     questionTitle.innerText = questionAnswer[questionIndex].question_title; // Change the title of the question
@@ -345,4 +345,62 @@ function setupLaunchQuestion(questionIndex) {
     firstAnswer.innerText = questionAnswer[questionIndex].answers.a;
     secondaryAnswer.innerText = questionAnswer[questionIndex].answers.b;
     thirdAnswer.innerText = questionAnswer[questionIndex].answers.c;
+}
+
+// Result animation :
+function resultQuizzAnim() {
+    anime
+        .timeline({ loop: false })
+        .add(
+            {
+                targets: "section.result_section",
+                duration: 1600,
+                translateY: ["100%", 0],
+                easing: "cubicBezier(0.5, 0, 0, 1)",
+            },
+            600
+        )
+        .add(
+            {
+                targets: "section.result_section .result h2 .letter",
+                duration: 2000,
+                opacity: [0, 1],
+                rotate: [-10, 0],
+                translateY: [-60, 0],
+                easing: "easeOutElastic(0.7, 1)",
+                delay: anime.stagger(60),
+            },
+            1800
+        )
+        .add(
+            {
+                targets: "section.result_section .result p .letter",
+                duration: 2000,
+                opacity: [0, 1],
+                skew: [15, 0],
+                translateY: [20, 0],
+                easing: "easeOutElastic(0.7, 1)",
+                delay: anime.stagger(40),
+            },
+            2300
+        )
+        .add(
+            {
+                targets: "section.result_section .result #user_result .letter",
+                duration: 2000,
+                translateY: ["200%", 0],
+                easing: "easeOutExpo",
+                delay: anime.stagger(80, { from: "last" }),
+            },
+            2900
+        )
+        .add(
+            {
+                targets: "section.result_section .result a",
+                duration: 600,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+            },
+            4200
+        );
 }
