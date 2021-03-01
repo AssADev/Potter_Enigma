@@ -71,11 +71,12 @@ body {
 }
 
 a {
+  cursor: none;
   text-decoration: none;
 }
 
 button {
-  cursor: pointer;
+  cursor: none;
   font-family: "Montserrat";
 }
 
@@ -830,7 +831,6 @@ section.quizz .right_side .right_side_inner .answers .answer {
   position: relative;
   padding: 50px;
   background: #e34a32;
-  cursor: pointer;
 }
 
 section.quizz .right_side .right_side_inner .answers .answer:hover::before, section.quizz .right_side .right_side_inner .answers .answer.selected::before {
@@ -1000,6 +1000,36 @@ section.result_section .result .result_inner a::before {
   section.result_section .result .result_inner p {
     font-size: 18px;
   }
+}
+
+.cursor {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 50;
+  width: 8px;
+  height: 8px;
+  background: #e8e9e3;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
+
+.cursor_follow {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 50;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e8e9e3;
+  border-radius: 50%;
+  -webkit-transition: 0.1s ease-out;
+  transition: 0.1s ease-out;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .load_container {

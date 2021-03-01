@@ -123,7 +123,6 @@ section.quizz {
                     position: relative;
                     padding: 50px;
                     background: $tertiary-color;
-                    cursor: pointer;
 
                     &:hover::before,
                     &.selected::before {
