@@ -855,16 +855,17 @@ section.result_section {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 2;
   width: 100%;
   height: 100vh;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  overflow: hidden;
+  display: none;
 }
 
 section.result_section .result {
   width: 100%;
   height: 100%;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   background: #b53910;
 }
 

@@ -228,11 +228,12 @@ const potterEnigmaResultNumber = document.getElementById("user_result");
 
 function loadQuestion(questionIndex) {
     if (questionIndex >= questionAnswer.length) {
-        potterEnigmaResultNumber.innerHTML = points < 9 ? `0${points} / 0${questionAnswer.length}` : `0${points} / 0${questionAnswer.length}`;
+        potterEnigmaResultNumber.innerHTML = points < 9 ? `0${points} / 0${questionAnswer.length}` : `${points} / ${questionAnswer.length}`;
 
         potterEnigmaResultSentence.innerHTML = letterizeSpan(potterEnigmaResultSentence);
         potterEnigmaResultNumber.innerHTML = letterizeSpan(potterEnigmaResultNumber);
 
+        document.querySelector("section.result_section").style.display = "block";
         resultQuizzAnim();
     } else {
         transitionQuestionAnim(questionIndex);
@@ -353,7 +354,7 @@ function resultQuizzAnim() {
         .timeline({ loop: false })
         .add(
             {
-                targets: "section.result_section",
+                targets: "section.result_section .result",
                 duration: 1600,
                 translateY: ["100%", 0],
                 easing: "cubicBezier(0.5, 0, 0, 1)",
