@@ -511,7 +511,6 @@ main {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: #e8e9e3;
 }
 
 main .title {
@@ -543,7 +542,6 @@ main .title .title_inner {
 }
 
 main .title .title_inner h1 {
-  font-family: "Cardo";
   font-weight: 400;
   font-size: 58px;
   margin-bottom: 5px;
@@ -851,6 +849,95 @@ section.quizz .right_side .right_side_inner .answers .answer p {
   text-align: center;
   font-size: 22px;
   color: #e8e9e3;
+}
+
+section.result_section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+}
+
+section.result_section .result {
+  width: 100%;
+  height: 100%;
+  background: #b53910;
+}
+
+section.result_section .result .result_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #e8e9e3;
+}
+
+section.result_section .result .result_inner h2 {
+  font-weight: 400;
+  font-size: 58px;
+  margin-bottom: 5px;
+}
+
+section.result_section .result .result_inner p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #e0a696;
+  margin-bottom: 15px;
+}
+
+section.result_section .result .result_inner span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 44px;
+  font-weight: 400;
+  color: #f2f2f2;
+  margin-bottom: 5px;
+}
+
+section.result_section .result .result_inner a {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  color: #e0a696;
+  font-size: 16px;
+  margin-top: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+section.result_section .result .result_inner a:hover {
+  color: #e8e9e3;
+}
+
+section.result_section .result .result_inner a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+section.result_section .result .result_inner a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: #e8e9e3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .load_container {

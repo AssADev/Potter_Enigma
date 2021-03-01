@@ -65,10 +65,11 @@ function introductionQuizzAnim() {
 
 // Quizz :
 const startQuizzBtn = document.getElementById("start_quizz");
+let points = 0;
 
 startQuizzBtn.addEventListener("click", () => {
     launchQuizzAnim();
-    let points = 0;
+    points = 0;
 });
 
 // Quizz answers :
@@ -205,13 +206,15 @@ submitBtn.addEventListener("click", () => {
             return;
         } else {
             userAnswer = document.querySelector(".answer.selected").getAttribute("data-answer");
+            if (questionAnswer[currentIndex].correctAnswer == userAnswer) {
+                points++;
+            }
 
             currentIndex++;
             loadQuestion(currentIndex);
             if (currentIndex > questionAnswer.length) {
                 console.log("too much");
             }
-            console.log(userAnswer);
         }
     }
 });
@@ -224,7 +227,7 @@ function loadQuestion(questionIndex) {
         transitionQuestionAnim(questionIndex);
         // transitionNextQuestion(questionIndex);
 
-        console.log(questionIndex);
+        // console.log(questionIndex);
     }
 }
 
