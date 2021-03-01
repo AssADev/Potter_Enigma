@@ -17,9 +17,7 @@ function letterizeSpan(element) {
 }
 
 // Introduction when enter in the quizz page :
-introductionQuizzAnim();
-
-function introductionQuizzAnim() {
+(function introductionQuizzAnim() {
     anime
         .timeline({ loop: false })
         .add(
@@ -64,7 +62,7 @@ function introductionQuizzAnim() {
             },
             3000
         );
-}
+})();
 
 // Quizz :
 const startQuizzBtn = document.getElementById("start_quizz");
@@ -91,8 +89,6 @@ answers.forEach((answer) =>
 );
 
 // Variables for the Quizz :
-// launchQuizzAnim();
-
 function launchQuizzAnim() {
     anime
         .timeline({ loop: false })
@@ -208,7 +204,6 @@ const thirdAnswer = document.querySelector(".answer[data-answer='c'] p");
 let authorizeAnswerBtn = true;
 let userAnswer;
 let currentIndex = 0;
-let userGoodAnswer = [];
 
 submitBtn.addEventListener("click", () => {
     if (authorizeAnswerBtn) {
@@ -340,8 +335,7 @@ function transitionQuestionAnim(questionIndex) {
 }
 
 // Launch the first question :
-setupLaunchQuestion(0);
-function setupLaunchQuestion(questionIndex) {
+(function setupLaunchQuestion(questionIndex) {
     // Change the number of the question :
     questionNumber.innerHTML = questionIndex < 9 ? `0${questionIndex + 1}` : `${questionIndex + 1}`;
     questionNumber.innerHTML = letterizeSpan(questionNumber);
@@ -353,7 +347,7 @@ function setupLaunchQuestion(questionIndex) {
     firstAnswer.innerText = questionAnswer[questionIndex].answers.a;
     secondaryAnswer.innerText = questionAnswer[questionIndex].answers.b;
     thirdAnswer.innerText = questionAnswer[questionIndex].answers.c;
-}
+})(0);
 
 // Result animation :
 function resultQuizzAnim() {
