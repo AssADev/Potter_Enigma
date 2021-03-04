@@ -252,7 +252,7 @@ const questionAnswer = [
         question_description: "Did Ginny Weasley strangle the cocks of Hagrid who was a threat to the Basilic ?",
         answers: {
             a: "True : She's the one who killed them",
-            b: "False : She didn't kill them.",
+            b: "False : She didn't kill them",
         },
         correctAnswer: "a",
     },
@@ -269,8 +269,8 @@ const questionAnswer = [
         question_title: "The murderer of Dumbledore",
         question_description: "Did Drago Malfoy disarm Dumbledore and then kill him in the Astronomy Tower ?",
         answers: {
-            a: "True : Drago Malfoy disarmed him and then killed him.",
-            b: "False : Drago Malfoy disarmed him but did not kill him.",
+            a: "True : Drago Malfoy disarmed him and then killed him",
+            b: "False : Drago Malfoy disarmed him but did not kill him",
         },
         correctAnswer: "b",
     },

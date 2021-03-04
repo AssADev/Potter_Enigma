@@ -8,9 +8,6 @@ potterEnigmaDesc.innerHTML = letterizeSpan(potterEnigmaDesc);
 const gridNamesHoverSpan = document.querySelectorAll(".name_hover #name_hover_anim");
 gridNamesHoverSpan.forEach((gridNameHoverSpan) => (gridNameHoverSpan.innerHTML = letterizeSpan(gridNameHoverSpan)));
 
-const gridSentences = document.querySelectorAll(".card_grid_inner p");
-gridSentences.forEach((gridSentence) => (gridSentence.innerHTML = letterizeSpan(gridSentence)));
-
 // Functions Animations :
 function letterizeSpan(element) {
     return element.textContent.replace(/\S/g, `<span class="letter">$&</span>`);
