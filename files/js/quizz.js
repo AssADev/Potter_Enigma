@@ -158,35 +158,187 @@ function launchQuizzAnim() {
 // Questions for the quizz
 const questionAnswer = [
     {
-        question_title: "Question N°1",
-        question_description: "Description N°1",
+        question_title: "The parents of Harry Potter",
+        question_description: "Is Harry Potter the son of James Evans and Lily Potter ?",
         answers: {
-            a: "Answer N°1 - 1",
-            b: "Answer N°2 - 1",
-        },
-        correctAnswer: "a",
-    },
-    {
-        question_title: "Question N°2",
-        question_description: "Description N°2",
-        answers: {
-            a:
-                "Answer N°1 - 2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi unde placeat nemo nulla, nobis possimus repudiandae perspiciatis accusantium dolores voluptas minus provident enim animi. Eaque, quam? Ratione nostrum alias aliquam ipsum. Deleniti ad fuga quibusdam, expedita nihil totam quasi. Neque, cumque incidunt ab eligendi sunt error a voluptatibus quasi?",
-            b: "Answer N°2 - 2",
-        },
-        correctAnswer: "a",
-    },
-    {
-        question_title: "Question N°3",
-        question_description:
-            "Description N°3 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi unde placeat nemo nulla, nobis possimus repudiandae perspiciatis accusantium dolores voluptas minus provident enim animi. Eaque, quam? Ratione nostrum alias aliquam ipsum. Deleniti ad fuga quibusdam, expedita nihil totam quasi. Neque, cumque incidunt ab eligendi sunt error a voluptatibus quasi?",
-        answers: {
-            a: "Answer N°1 - 3",
-            b: "Answer N°2 - 3",
+            a: "True : These are his parents",
+            b: "False : It's not his parents",
         },
         correctAnswer: "b",
     },
-];
+    {
+        question_title: "Dumbledore in the saga",
+        question_description: "The actor playing Dumbledore was changed during the saga ?",
+        answers: {
+            a: "True : The actor has been changed",
+            b: "False : The actor has not been changed",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "Birth of Harry Potter",
+        question_description: "Harry Potter was borned on 21 July 1980 ?",
+        answers: {
+            a: "True : This is the right date",
+            b: "False : This is not the right date",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "The appearance of Hagrid",
+        question_description: "Rubeus Hagrid appears for the first time in Harry Potter and the Chamber of Secrets ?",
+        answers: {
+            a: "True : He appears for the first time in this film",
+            b: "False : He does not appear for the first time in this film",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "Creation of the Philosopher's Stone",
+        question_description: "Was the Philosopher's Stone made by Nicolas Flamel ?",
+        answers: {
+            a: "True : He is the one who created it",
+            b: "False : He didn't create it himself",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "The Golden Snitch of Quidditch",
+        question_description: "In his first game of Quidditch, Harry Potter catches the Golden Snitch with his hand to win Griffondor ?",
+        answers: {
+            a: "True : He managed to catch it with his hand",
+            b: "False : He didn't manage to catch it with his hand",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "Eye colour",
+        question_description: "The eyes of the Basilic are they yellow ?",
+        answers: {
+            a: "True : They are yellow",
+            b: "False : They are not yellow",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "The first test",
+        question_description: "During the Three Wizards Tournament, Cedric Diggory has to face a « Swedish with short snout » ?",
+        answers: {
+            a: "True : It is the dragon he has to face",
+            b: "False : It is not the dragon he has to face",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "The souls of Voldemort",
+        question_description: "Voldemort created 7 Horcruxes, so his soul is divided into 7 parts ?",
+        answers: {
+            a: "True : Its soul is divided into 7 parts",
+            b: "False : Its soul is not divided into 7 parts",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "Dumbledore's mother",
+        question_description: "Is Dumbledore's mother named 'Ariana' ?",
+        answers: {
+            a: "True : This is the name of Dumbledore's mother",
+            b: "False : This is not the name of Dumbledore's mother",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "Evil Ginny Weasley",
+        question_description: "Did Ginny Weasley strangle the cocks of Hagrid who was a threat to the Basilic ?",
+        answers: {
+            a: "True : She's the one who killed them",
+            b: "False : She didn't kill them.",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "The liberation of Dobby",
+        question_description: "Does Harry Potter give Dobby a piece of clothing, in this case a sock, to give him freedom ?",
+        answers: {
+            a: "True : Harry Potter gives him a sock",
+            b: "False : Harry Potter didn't give him a sock",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "The murderer of Dumbledore",
+        question_description: "Did Drago Malfoy disarm Dumbledore and then kill him in the Astronomy Tower ?",
+        answers: {
+            a: "True : Drago Malfoy disarmed him and then killed him.",
+            b: "False : Drago Malfoy disarmed him but did not kill him.",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "The wedding of Fleur Delacour",
+        question_description: "During Fleur Delacour's wedding to Bill Weaslay, Fleur wears a dress with two phoenixes on her bust ?",
+        answers: {
+            a: "True : There are two phoenixes on her dress",
+            b: "False : There are not two phoenixes on her dress",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "The Animagus",
+        question_description: "Are Remus Lupin's and Sirius Black's animagus the dog and the werewolf respectively ?",
+        answers: {
+            a: "True : These are their animagus",
+            b: "False : These are not their animagus",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "Azkaban and the Muggles",
+        question_description: "Can Azkaban prison accommodate Muggles or only sorcerers ?",
+        answers: {
+            a: "True : Azkaban prison accommodate Muggles",
+            b: "False : Azkaban prison does not accommodate Muggles",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "The Grey Lady of Serdaigle",
+        question_description: "Was the first student who had a long discussion with the Grey Lady Tom Jedusor ?",
+        answers: {
+            a: "True : It was Tom Jedusor who spoke to him at length",
+            b: "False : It wasn't Tom Jedusor who spoke to him at length",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "Prefect Nymphadora Tonks",
+        question_description: "Nymphadora Tonks belonged to the house Poufsouffle, and wished to become a prefect of this house, did she succeed ?",
+        answers: {
+            a: "True : She managed to become a prefect",
+            b: "False : She did not succeed in becoming a prefect",
+        },
+        correctAnswer: "b",
+    },
+    {
+        question_title: "The harassment of Severus Rogue",
+        question_description:
+            "Was Severus Snape harassed by three children when he was younger, who were James Potter, Sirius Black and Peter Pettigrow ?",
+        answers: {
+            a: "True : These three students harassed him",
+            b: "False : These three students do not harass him",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question_title: "Trelawney's dismissal",
+        question_description: "Is Professor Sibylle Trelawney fired by Dolores Ombrage without anyone intervening ?",
+        answers: {
+            a: "True : She was dismissed because no one intervened",
+            b: "False : She was not dismissed because someone intervened",
+        },
+        correctAnswer: "b",
+    },
+]; // 20 Questions
 
 // Quizz functionnalities :
 const submitBtn = document.getElementById("submit_answer");
