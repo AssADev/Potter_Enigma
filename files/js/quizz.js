@@ -293,20 +293,20 @@ const questionAnswer = [
         correctAnswer: "b",
     },
     {
-        question_title: "Azkaban and the Muggles",
-        question_description: "Can Azkaban prison accommodate Muggles or only sorcerers ?",
+        question_title: "Hermione Granger and the Sombral",
+        question_description: "Can Hermione Granger see the Thestral on which she rides in the third opus ?",
         answers: {
-            a: "True : Azkaban prison accommodates Muggles",
-            b: "False : Azkaban prison does not accommodate Muggles",
+            a: "True : She can see the Sombral",
+            b: "False : She can't see the Sombral",
         },
-        correctAnswer: "a",
+        correctAnswer: "b",
     },
     {
         question_title: "The Grey Lady of Serdaigle",
         question_description: "Was Tom Jedusor the first student to have a long discussion with the Grey Lady ?",
         answers: {
-            a: "True : It was Tom Jedusor who spoke to him at length",
-            b: "False : It wasn't Tom Jedusor who spoke to him at length",
+            a: "True : It was Tom Jedusor who spoke to her at length",
+            b: "False : It wasn't Tom Jedusor who spoke to her at length",
         },
         correctAnswer: "a",
     },
