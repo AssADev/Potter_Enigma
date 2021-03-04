@@ -1,14 +1,18 @@
 document.body.style.cursor = "none";
 
 // Create a custom cursor :
+const cursorContainer = document.createElement("div");
+cursorContainer.classList.add("cursor_container");
+
 const cursor = document.createElement("div");
 cursor.classList.add("cursor");
 
 const cursorFollow = document.createElement("div");
 cursorFollow.classList.add("cursor_follow");
 
-document.body.appendChild(cursor);
-document.body.appendChild(cursorFollow);
+cursorContainer.appendChild(cursor);
+cursorContainer.appendChild(cursorFollow);
+document.body.appendChild(cursorContainer);
 
 // Animate the cursor when user mouse move :
 window.addEventListener("mousemove", (e) => {
