@@ -303,10 +303,10 @@ const questionAnswer = [
     },
     {
         question_title: "The Grey Lady of Serdaigle",
-        question_description: "Was Tom Jedusor the first student to have a long discussion with the Grey Lady ?",
+        question_description: "Was Tom Riddle the first student to have a long discussion with the Grey Lady ?",
         answers: {
-            a: "True : It was Tom Jedusor who spoke to her at length",
-            b: "False : It wasn't Tom Jedusor who spoke to her at length",
+            a: "True : It was Tom Riddle who spoke to her at length",
+            b: "False : It wasn't Tom Riddle who spoke to her at length",
         },
         correctAnswer: "a",
     },
@@ -378,6 +378,17 @@ const potterEnigmaResultNumber = document.getElementById("user_result");
 function loadQuestion(questionIndex) {
     if (questionIndex >= questionAnswer.length) {
         potterEnigmaResultNumber.innerHTML = points < 9 ? `0${points} / 0${questionAnswer.length}` : `${points} / ${questionAnswer.length}`;
+        if (points > 16) {
+            potterEnigmaResultSentence.innerHTML = "Congratulations, you've just won your access to Hogwarts !";
+        } else if (points > 12) {
+            potterEnigmaResultSentence.innerHTML = "Bravo, you are almost a real wizard, just a little more effort !";
+        } else if (points > 8) {
+            potterEnigmaResultSentence.innerHTML = "You're going to need more determination to become a real wizard !";
+        } else if (points > 4) {
+            potterEnigmaResultSentence.innerHTML = "It's not brilliant ! You're going to have to revise your classics.";
+        } else {
+            potterEnigmaResultSentence.innerHTML = "I warned you, this quiz is not for Muggles !";
+        }
 
         potterEnigmaResultSentence.innerHTML = letterizeSpan(potterEnigmaResultSentence);
         potterEnigmaResultNumber.innerHTML = letterizeSpan(potterEnigmaResultNumber);
