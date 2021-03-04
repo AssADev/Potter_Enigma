@@ -159,10 +159,10 @@ function launchQuizzAnim() {
 const questionAnswer = [
     {
         question_title: "The parents of Harry Potter",
-        question_description: "Is Harry Potter the son of James Evans and Lily Potter ?",
+        question_description: "Is Harry Potter James Evans and Lily Potter's son ?",
         answers: {
-            a: "True : These are his parents",
-            b: "False : It's not his parents",
+            a: "True : They are his parents",
+            b: "False : They are not his parents",
         },
         correctAnswer: "b",
     },
@@ -204,7 +204,7 @@ const questionAnswer = [
     },
     {
         question_title: "The Golden Snitch of Quidditch",
-        question_description: "In his first game of Quidditch, Harry Potter catches the Golden Snitch with his hand to win Griffondor ?",
+        question_description: "In his first game of Quidditch, Harry Potter catches the Golden Snitch with his hand to make Griffondor win ?",
         answers: {
             a: "True : He managed to catch it with his hand",
             b: "False : He didn't manage to catch it with his hand",
@@ -213,7 +213,7 @@ const questionAnswer = [
     },
     {
         question_title: "Eye colour",
-        question_description: "The eyes of the Basilic are they yellow ?",
+        question_description: "Are the eyes of the Basilic yellow ?",
         answers: {
             a: "True : They are yellow",
             b: "False : They are not yellow",
@@ -222,10 +222,10 @@ const questionAnswer = [
     },
     {
         question_title: "The first test",
-        question_description: "During the Three Wizards Tournament, Cedric Diggory has to face a « Swedish with short snout » ?",
+        question_description: "During the Three Wizards Tournament, Cedric Diggory had to face a 'Swedish with short snout ?'",
         answers: {
-            a: "True : It is the dragon he has to face",
-            b: "False : It is not the dragon he has to face",
+            a: "True : It is the dragon he had to face",
+            b: "False : It is not the dragon he had to face",
         },
         correctAnswer: "a",
     },
@@ -233,8 +233,8 @@ const questionAnswer = [
         question_title: "The souls of Voldemort",
         question_description: "Voldemort created 7 Horcruxes, so his soul is divided into 7 parts ?",
         answers: {
-            a: "True : Its soul is divided into 7 parts",
-            b: "False : Its soul is not divided into 7 parts",
+            a: "True : His soul is divided into 7 parts",
+            b: "False : His soul is not divided into 7 parts",
         },
         correctAnswer: "b",
     },
@@ -258,9 +258,9 @@ const questionAnswer = [
     },
     {
         question_title: "The liberation of Dobby",
-        question_description: "Does Harry Potter give Dobby a piece of clothing, in this case a sock, to give him freedom ?",
+        question_description: "Did Harry Potter give Dobby a piece of clothing, in this case a sock, to give him freedom ?",
         answers: {
-            a: "True : Harry Potter gives him a sock",
+            a: "True : Harry Potter gave him a sock",
             b: "False : Harry Potter didn't give him a sock",
         },
         correctAnswer: "b",
@@ -276,7 +276,7 @@ const questionAnswer = [
     },
     {
         question_title: "The wedding of Fleur Delacour",
-        question_description: "During Fleur Delacour's wedding to Bill Weaslay, Fleur wears a dress with two phoenixes on her bust ?",
+        question_description: "During Fleur Delacour's wedding with Bill Weaslay, Fleur wears a dress with two phoenixes on her bust ?",
         answers: {
             a: "True : There are two phoenixes on her dress",
             b: "False : There are not two phoenixes on her dress",
@@ -296,14 +296,14 @@ const questionAnswer = [
         question_title: "Azkaban and the Muggles",
         question_description: "Can Azkaban prison accommodate Muggles or only sorcerers ?",
         answers: {
-            a: "True : Azkaban prison accommodate Muggles",
+            a: "True : Azkaban prison accommodates Muggles",
             b: "False : Azkaban prison does not accommodate Muggles",
         },
         correctAnswer: "a",
     },
     {
         question_title: "The Grey Lady of Serdaigle",
-        question_description: "Was the first student who had a long discussion with the Grey Lady Tom Jedusor ?",
+        question_description: "Was Tom Jedusor the first student to have a long discussion with the Grey Lady ?",
         answers: {
             a: "True : It was Tom Jedusor who spoke to him at length",
             b: "False : It wasn't Tom Jedusor who spoke to him at length",
@@ -312,7 +312,7 @@ const questionAnswer = [
     },
     {
         question_title: "Prefect Nymphadora Tonks",
-        question_description: "Nymphadora Tonks belonged to the house Poufsouffle, and wished to become a prefect of this house, did she succeed ?",
+        question_description: "Nymphadora Tonks belonged to Hufflepuff House, and wished to become the prefect of this house, did she succeed ?",
         answers: {
             a: "True : She managed to become a prefect",
             b: "False : She did not succeed in becoming a prefect",
@@ -322,7 +322,7 @@ const questionAnswer = [
     {
         question_title: "The harassment of Severus Rogue",
         question_description:
-            "Was Severus Snape harassed by three children when he was younger, who were James Potter, Sirius Black and Peter Pettigrow ?",
+            "Was Severus Snape harassed by three children named James Potter, Sirius Black and Peter Pettigrow when he was younger ?",
         answers: {
             a: "True : These three students harassed him",
             b: "False : These three students do not harass him",
@@ -331,7 +331,7 @@ const questionAnswer = [
     },
     {
         question_title: "Trelawney's dismissal",
-        question_description: "Is Professor Sibylle Trelawney fired by Dolores Ombrage without anyone intervening ?",
+        question_description: "Was Professor Sibylle Trelawney fired by Dolores Ombrage without anyone intervening ?",
         answers: {
             a: "True : She was dismissed because no one intervened",
             b: "False : She was not dismissed because someone intervened",
