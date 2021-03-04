@@ -163,9 +163,8 @@ const questionAnswer = [
         answers: {
             a: "Answer N°1 - 1",
             b: "Answer N°2 - 1",
-            c: "Answer N°3 - 1",
         },
-        correctAnswer: "c",
+        correctAnswer: "a",
     },
     {
         question_title: "Question N°2",
@@ -174,8 +173,6 @@ const questionAnswer = [
             a:
                 "Answer N°1 - 2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi unde placeat nemo nulla, nobis possimus repudiandae perspiciatis accusantium dolores voluptas minus provident enim animi. Eaque, quam? Ratione nostrum alias aliquam ipsum. Deleniti ad fuga quibusdam, expedita nihil totam quasi. Neque, cumque incidunt ab eligendi sunt error a voluptatibus quasi?",
             b: "Answer N°2 - 2",
-            c:
-                "Answer N°3 - 2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi unde placeat nemo nulla, nobis possimus repudiandae perspiciatis accusantium dolores voluptas minus provident enim animi. Eaque, quam? Ratione nostrum alias aliquam ipsum. Deleniti ad fuga quibusdam, expedita nihil totam quasi. Neque, cumque incidunt ab eligendi sunt error a voluptatibus quasi?",
         },
         correctAnswer: "a",
     },
@@ -186,7 +183,6 @@ const questionAnswer = [
         answers: {
             a: "Answer N°1 - 3",
             b: "Answer N°2 - 3",
-            c: "Answer N°3 - 3",
         },
         correctAnswer: "b",
     },
@@ -199,7 +195,6 @@ const questionDescription = document.querySelector(".description");
 
 const firstAnswer = document.querySelector(".answer[data-answer='a'] p");
 const secondaryAnswer = document.querySelector(".answer[data-answer='b'] p");
-const thirdAnswer = document.querySelector(".answer[data-answer='c'] p");
 
 let authorizeAnswerBtn = true;
 let userAnswer;
@@ -319,7 +314,6 @@ function transitionQuestionAnim(questionIndex) {
                     // Change the answer :
                     firstAnswer.innerText = questionAnswer[questionIndex].answers.a;
                     secondaryAnswer.innerText = questionAnswer[questionIndex].answers.b;
-                    thirdAnswer.innerText = questionAnswer[questionIndex].answers.c;
 
                     anime({
                         targets: ".answer",
@@ -346,7 +340,6 @@ function transitionQuestionAnim(questionIndex) {
     // Change the answer :
     firstAnswer.innerText = questionAnswer[questionIndex].answers.a;
     secondaryAnswer.innerText = questionAnswer[questionIndex].answers.b;
-    thirdAnswer.innerText = questionAnswer[questionIndex].answers.c;
 })(0);
 
 // Result animation :
