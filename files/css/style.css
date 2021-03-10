@@ -126,7 +126,7 @@ header .title p {
 
 header .container {
   position: relative;
-  z-index: 2;
+  z-index: 20;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
