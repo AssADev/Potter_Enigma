@@ -377,7 +377,7 @@ const potterEnigmaResultNumber = document.getElementById("user_result");
 
 function loadQuestion(questionIndex) {
     if (questionIndex >= questionAnswer.length) {
-        potterEnigmaResultNumber.innerHTML = points < 9 ? `0${points} / 0${questionAnswer.length}` : `${points} / ${questionAnswer.length}`;
+        potterEnigmaResultNumber.innerHTML = points < 9 ? `0${points} / ${questionAnswer.length}` : `${points} / ${questionAnswer.length}`;
         if (points > 16) {
             potterEnigmaResultSentence.innerHTML = "Congratulations, you've just won your access to Hogwarts !";
         } else if (points > 12) {
