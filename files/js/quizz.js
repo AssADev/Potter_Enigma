@@ -249,7 +249,7 @@ const questionAnswer = [
     },
     {
         question_title: "Evil Ginny Weasley",
-        question_description: "Did Ginny Weasley strangle the cocks of Hagrid who was a threat to the Basilic ?",
+        question_description: "Did Ginny Weasley strangle the roosters of Hagrid who was a threat to the Basilic ?",
         answers: {
             a: "True : She's the one who killed them",
             b: "False : She didn't kill them",
